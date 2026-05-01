@@ -1,0 +1,22 @@
+<h1>Aplicação</h1>
+<app-header></app-header>
+<router-outlet></router-outlet>
+
+
+<ul>
+    <li>Item 1 - {{descricao1}}</li>
+</ul>
+
+<br>
+<label for="">Nome:</label>
+<br>
+<input [(ngModel)]="valor.nome"/>
+<br><br>
+<label for="">Idade:</label>
+<br>
+<input [(ngModel)]="valor.idade"/>
+<br><br>
+<label for="">Descrição:</label>
+<br>
+<input [(ngModel)]="valor.descricao"/>
+<br>
