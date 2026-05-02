@@ -2,14 +2,15 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header.components";
 import { FormsModule } from '@angular/forms';
+import { BindingPageComponent } from "./pages/binding-page.component";
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FormsModule],
+  imports: [RouterOutlet, HeaderComponent, FormsModule, BindingPageComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'FirstProject';
@@ -20,6 +21,7 @@ export class AppComponent {
   item= "";
   quantidade = 0;
   mensagem = '';
+
    limparMensagem(){
       this.mensagem = '';
     }
