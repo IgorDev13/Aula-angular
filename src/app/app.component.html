@@ -4,19 +4,41 @@
 
 
 <ul>
-    <li>Item 1 - {{descricao1}}</li>
+    @for (item of valor; track $index) {
+        <li>{{item.item}} - {{item.quantidade}}</li>
+    }
 </ul>
 
+<form (ngSubmit)="adicionar()">
+    <label>Item: </label>
+    <input
+     [(ngModel)]="item"
+     name="item"
+      (input)="limparMensagem()" 
+      placeholder="item">
+
 <br>
-<label for="">Nome:</label>
 <br>
-<input [(ngModel)]="valor.nome"/>
-<br><br>
-<label for="">Idade:</label>
-<br>
-<input [(ngModel)]="valor.idade"/>
-<br><br>
-<label for="">Descrição:</label>
-<br>
-<input [(ngModel)]="valor.descricao"/>
-<br>
+
+    <label>Quantidade: </label>
+    <input 
+    type="number" 
+    [(ngModel)]="quantidade" 
+    name="quantidade"
+    (input)="limparMensagem()" 
+    placeholder="Quantidade">
+
+    <button type="submit">Adicionar</button>
+
+    
+@if (mensagem) {
+    <p style="color: red;">{{mensagem}}</p>
+}
+</form>
+
+
+
+
+
+
+
