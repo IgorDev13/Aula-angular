@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header.components";
 import { FormsModule } from '@angular/forms';
 import { BindingPageComponent } from "./pages/binding-page.component";
+import { ClientService } from './services/client.service';
 
 
 @Component({
@@ -13,6 +14,9 @@ import { BindingPageComponent } from "./pages/binding-page.component";
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
+   constructor(private clientService: ClientService){}
+
   title = 'FirstProject';
   descricao1 = 'Descricao item 2';
 
@@ -37,13 +41,15 @@ export class AppComponent {
       this.valor.push({
         item: this.item, 
         quantidade: this.quantidade
-    });
+    })
 
     //limpar campos
     this.item='';
     this.quantidade = 0;
 
-   
+}
+
+    sayHello(){
+      alert(this.clientService.sayHello());
   }
-  
 }

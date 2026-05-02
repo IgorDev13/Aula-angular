@@ -8,6 +8,7 @@ import { Component } from "@angular/core";
     template: `<h1>Binding Page</h1><img [src]="imagem" alt="Imagem">
     <div class="alert" [class]="{success: sucesso}">Alerta</div>
     <button (click)="enviarDados()">Enviar Dados</button>
+    <br><br>
     `,
     styles: `
         .alert{
